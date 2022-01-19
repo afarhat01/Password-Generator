@@ -3,8 +3,6 @@ import java.util.*;
 
 class Main {
   public static void main(String[] args) throws IOException {
-    System.out.println("Hello world!");
-
 		PrintWriter lower = new PrintWriter(new File("Lower.txt"));
 		for (int i = 0; i <1000; i++)
 		{
@@ -39,13 +37,13 @@ class Main {
 			upperLowerNumbers.print((int)(48 + (Math.random()*11)) + " ");
 			upperLowerNumbers.close();
 
-		PrintWriter allChars = new PrintWriter(new File("Mixed_chars.txt"));
+		PrintWriter allChar = new PrintWriter(new File("Mixed_chars.txt"));
 		for (int i = 0; i <1000; i++)
 		{
-			allChars.print((int)(33 + (Math.random()*94)) + " ");
+			allChar.print((int)(33 + (Math.random()*94)) + " ");
 		}
 
-		allChars.close();
+		allChar.close();
 
 		int[] upperInts = new int[1000];
 		int[] lowerInts = new int[1000];
@@ -109,8 +107,46 @@ class Main {
 		scan5.close();
 
 
-		
+		char[] upperL = new char[1000];
+		char[] lowerL = new char[1000];
+		char[] mixed = new char[1000];
+		char[] mixedNums = new char[1000];
+		char[] allChars = new char[1000];
 
+		for (int i = 0; i < 1000; i ++)
+		{
+			upperL[i] = (char)upperInts[i];
+		}
+
+		for (int i = 0; i < 1000; i ++)
+		{
+			lowerL[i] = (char)lowerInts[i];
+		}
+
+		for (int i = 0; i < 1000; i ++)
+		{
+			mixed[i] = (char)mixedLetInts[i];
+		}
+
+		for (int i = 0; i < 1000; i ++)
+		{
+			mixedNums[i] = (char)mixedLetNumInts[i];
+		}
+
+		for (int i = 0; i < 1000; i ++)
+		{
+			allChars[i] = (char)allCharsInts[i];
+		}
+
+		System.out.println("Welcome to the Password Generator!\n");
+		System.out.println("Please select the type of password you would like to generate!\n");
+		System.out.println("1. Lowercase Letters\n2. Uppercase Letters\n3. Uppercase and Lowercase Letters\n4. Uppercase, Lowercase, and Numbers\n5. Uppercase, Lowercase, Numbers and Symbols\n0. Exit\n");
+
+		System.out.println("Enter Selection by typing numbers 1,2,3,4,5 or 0 to exit\n");
+		Scanner scan = new Scanner(System.in);
+		int selection = scan.nextInt();
+
+		
 
 
 
