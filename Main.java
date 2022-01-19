@@ -26,6 +26,8 @@ class Main {
 			upperLower.print((int)(97 + (Math.random()*26)) + " ");
 		}
 
+		upperLower.close();
+
 		PrintWriter upperLowerNumbers = new PrintWriter(new File("Mixed_letters_numbers.txt"));
 		for (int i = 0; i <333; i++)
 		{
@@ -139,12 +141,129 @@ class Main {
 		}
 
 		System.out.println("Welcome to the Password Generator!\n");
+		
+		int go = 1;
+		int selection = 0;
+while (go != 0)
+	{
+		
 		System.out.println("Please select the type of password you would like to generate!\n");
 		System.out.println("1. Lowercase Letters\n2. Uppercase Letters\n3. Uppercase and Lowercase Letters\n4. Uppercase, Lowercase, and Numbers\n5. Uppercase, Lowercase, Numbers and Symbols\n0. Exit\n");
 
 		System.out.println("Enter Selection by typing numbers 1,2,3,4,5 or 0 to exit\n");
 		Scanner scan = new Scanner(System.in);
-		int selection = scan.nextInt();
+		selection = scan.nextInt();
+
+		System.out.println();
+
+			
+
+		if (selection >= 0 && selection <= 5)
+		{
+				if (selection == 1)
+				{
+					File firstFilePW = new File ("Lowerpw.txt");
+					PrintWriter firstPW = new PrintWriter(firstFilePW);
+							for (int i = 1; i <= 1000; i++)
+							{
+								firstPW.print(lowerL[i-1]);
+								if (i%8 == 0)
+								{
+									firstPW.print(" ");
+								}
+							}
+								
+						System.out.println("Successfully printed Lowercase Letter Passwords!\n");
+						firstPW.close();
+				}
+				else if (selection == 2)
+				{
+					File secondFilePW = new File ("Upperpw.txt");
+					PrintWriter secondPW = new PrintWriter(secondFilePW);
+							for (int i = 1; i <= 1000; i++)
+							{
+								secondPW.print(upperL[i-1]);
+								if (i%8 == 0)
+								{
+									secondPW.print(" ");
+								}
+							}
+								
+						System.out.println("Successfully printed Uppercase Letter Passwords!\n");
+						secondPW.close();
+				}
+				else if (selection == 3)
+				{
+					File thirdFilePW = new File ("Mixedpw.txt");
+					PrintWriter thirdPW = new PrintWriter(thirdFilePW);
+							for (int i = 1; i <= 1000; i++)
+							{
+								thirdPW.print(mixed[i-1]);
+								if (i%8 == 0)
+								{
+									thirdPW.print(" ");
+								}
+							}
+								
+						System.out.println("Successfully printed Uppercase and Lowercase Letter Passwords!\n");
+						thirdPW.close();
+				}
+				else if (selection == 4)
+				{
+					File fourthFilePW = new File ("MixedNumpw.txt");
+					PrintWriter fourthPW = new PrintWriter(fourthFilePW);
+							for (int i = 1; i <= 1000; i++)
+							{
+								fourthPW.print(mixedNums[i-1]);
+								if (i%8 == 0)
+								{
+									fourthPW.print(" ");
+								}
+							}
+								
+						System.out.println("Successfully printed Mixed Letters and Numbers passwords!\n");
+						fourthPW.close();
+				}
+				else if (selection == 5)
+				{
+					File fifthFilePW = new File ("AllCharspw.txt");
+					PrintWriter fifthPW = new PrintWriter(fifthFilePW);
+							for (int i = 1; i <= 1000; i++)
+							{
+								fifthPW.print(allChars[i-1]);
+								if (i%8 == 0)
+								{
+									fifthPW.print(" ");
+								}
+							}
+								
+						System.out.println("Successfully printed all character passwords!!\n");
+						fifthPW.close();
+				}
+				else if (selection == 0)
+				{
+					System.out.print("Thank you for using Password Generator!");
+					break;
+				}
+
+			}
+		else
+		{
+			System.out.println("Not a Valid Selection, please try again\n");
+		}
+
+				System.out.println("Would you like to continue? (Select any number for 'yes', or 0 to exit)\n");
+				go = scan.nextInt();
+
+				if (go == 0)
+				{
+					System.out.println("\nThank you for using Password Generator!");
+				}
+				
+				
+	}
+				
+		
 
 		
 
