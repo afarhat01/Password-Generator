@@ -260,20 +260,7 @@ while (go != 0)
 					System.out.println("\nThank you for using Password Generator!");
 				}
 				
-				
-	}
-				
-		
-
-		
-
-
-
-
-
-
-
-
+			}
 
 
   }
