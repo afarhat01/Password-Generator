@@ -31,7 +31,7 @@ class Main {
 		PrintWriter upperLowerNumbers = new PrintWriter(new File("Mixed_letters_numbers.txt"));
 		for (int i = 0; i <333; i++)
 		{
-			upperLowerNumbers.print((int)(48 + (Math.random()*11)) + " ");
+			upperLowerNumbers.print((int)(48 + (Math.random()*10)) + " ");
 			upperLowerNumbers.print((int)(65 + (Math.random()*26)) + " ");
 			upperLowerNumbers.print((int)(97 + (Math.random()*26)) + " ");
 		}
